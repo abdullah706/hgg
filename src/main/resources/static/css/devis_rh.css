@@ -1,0 +1,17 @@
+legend {
+  float: none;
+  padding: inherit;
+}
+
+.radio-fieldset {
+  align-items: center;
+}
+
+.radio-fieldset > legend {
+  float: left;
+  font-size: medium;
+}
+
+button[type="submit"] {
+  max-width: max-content;
+}
