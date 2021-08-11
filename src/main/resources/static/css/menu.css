@@ -1,0 +1,23 @@
+.navbar {
+  height: 100%;
+  padding: 0px;
+}
+
+.navbar-brand {
+  height: 100%;
+  padding: 0px;
+}
+
+.navbar-brand img {
+  height: 100%;
+  max-height: 5rem;
+  padding: 0.5rem;
+}
+
+.navbar-nav {
+  padding: 1rem;
+}
+
+.navbar a {
+  color: white;
+}

@@ -1,0 +1,18 @@
+.faq #accordion1 > .accordion-item:not(:first-child) {
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.faq .accordion-button:not(.collapsed) {
+  color: black;
+  background-color: white;
+}
+
+.faq .accordion-button:focus {
+  box-shadow: none;
+}
+
+.faq h1 {
+  font-size: large;
+  font-weight: normal;
+  margin-bottom: 0%;
+}

@@ -1,0 +1,30 @@
+.accueil .media {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  display: flex;
+}
+
+.accueil .div-icon {
+  min-height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+}
+
+.accueil .media-body {
+  padding: 0rem 0.5rem;
+}
+
+.accueil h1 {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.accueil .media-body h5 {
+  font-size: xx-large;
+  font-weight: bold;
+}

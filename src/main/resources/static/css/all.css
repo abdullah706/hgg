@@ -1,0 +1,37 @@
+body {
+  background-color: rgb(243, 243, 243);
+}
+
+/* Background-color */
+
+.bg-pink {
+  background-color: rgb(255, 102, 128);
+}
+
+.bg-green-blue {
+  background-color: rgb(72, 167, 127);
+}
+
+.bg-green {
+  background-color: rgb(39, 150, 39);
+}
+
+.bg-yellow {
+  background-color: rgb(201, 201, 37);
+}
+
+.bg-red {
+  background-color: rgb(190, 62, 62);
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0% !important;
+}

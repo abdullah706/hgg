@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head th:replace="head :: header(~{::title}, ~{::link})">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{css/faq.css}"/>
+
+    <title>Lab&Co</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 p-0">
+                <th:block th:replace="menu" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 px-1">
+                <div class="card faq">
+                    <div class="row px-3 py-2"> 
+                        <div class="col-12">
+                            Questions & suggestions
+                        </div>
+                    </div>
+                    <hr class="m-0"/>
+                    <div class="row p-3">
+                        <div class="col-12">
+                                <div class="row p-2">
+                                    <div class="col-12"> 
+                                        <div id="accordion1" class="accordion">
+
+                                            <div class="accordion-item shadow-sm rounded" th:each="questionsTheme, iterStatTheme : ${questionsThemes}">
+                                              <h2 class="accordion-header">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" th:data-bs-target="'#collapse'+${iterStatTheme.count}" th:text="${questionsTheme.title}">
+                                                </button>
+                                              </h2>
+                                              <div th:id="'collapse'+${iterStatTheme.count}" class="accordion-collapse show">
+                                                <div class="accordion-body">
+                                                  <div class="accordion">
+
+                                                      <div class="accordion-item" th:each="question, iterStatQuestion : ${questionsTheme.questions}">
+                                                        <h2 class="accordion-header">
+                                                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" th:data-bs-target="'#collapse'+${iterStatTheme.count}+'-'+${iterStatQuestion.count}"  th:text="${question.question}">
+                                                          </button>
+                                                        </h2>
+                                                        <div class="accordion-collapse collapse" th:id="'collapse'+${iterStatTheme.count}+'-' + ${iterStatQuestion.count}">
+                                                          <div class="accordion-body" th:text="${question.answer}">
+                                                          </div>
+                                                        </div>
+                                                      </div>
+
+                                                      
+
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                            <div class="card mt-3">
+                                              <div class="row p-3">
+                                                <div class="col">
+                                                  <h1>Vous n'avez pas trouvé la réponse à votre question ?</h1>
+                                                </div>
+                                              </div>
+                                              <hr class="m-0"/>
+                                              <div class="row p-3">
+                                                <div class="col">
+                                                  <a href="#" class="btn btn-primary">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-lg" viewBox="0 0 16 16">
+                                                      <path d="M3 4.075a.423.423 0 0 0 .43.44H4.9c.247 0 .442-.2.475-.445.159-1.17.962-2.022 2.393-2.022 1.222 0 2.342.611 2.342 2.082 0 1.132-.668 1.652-1.72 2.444-1.2.872-2.15 1.89-2.082 3.542l.005.386c.003.244.202.44.446.44h1.445c.247 0 .446-.2.446-.446v-.188c0-1.278.487-1.652 1.8-2.647 1.086-.826 2.217-1.743 2.217-3.667C12.667 1.301 10.393 0 7.903 0 5.645 0 3.17 1.053 3.001 4.075zm2.776 10.273c0 .95.758 1.652 1.8 1.652 1.085 0 1.832-.702 1.832-1.652 0-.985-.747-1.675-1.833-1.675-1.04 0-1.799.69-1.799 1.675z"/>
+                                                    </svg>
+                                                    Poser votre question ou faire votre suggestion à la DR&I
+                                                  </a>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col px-1">
+                <th:block th:replace="footer" />
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+</body>

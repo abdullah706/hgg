@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head lang="fr" xmlns:th="http://www.thymeleaf.org/">
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{css/preferences.css}">
+    <link rel="stylesheet" th:href="@{/css/all.css}">
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-slider/css/bootstrap-slider.css}"/>
+
+    <title>Lab&Co</title>
+</head>
+<body>
+<div class="container-fluid">
+
+    <div th:replace="fragment/menu :: navbar">
+
+    </div>
+    <div class="row">
+        <div class="col-12 px-1">
+            <div class="card preferences">
+                <div class="row px-3 py-2">
+                    <div class="col-12">
+                        Préférences utilisateurs
+                    </div>
+                </div>
+                <hr class="m-0"/>
+                <div class="row p-3">
+                    <form th:action="@{/save-project}" th:object="${jour}" method="post" class="col-12">
+                        <ul th:if="${#fields.hasErrors('*')}">
+                            <li th:each="error : ${#fields.errors('*')}" th:text="${error}">error</li>
+                        </ul>
+                        <h1 class="pb-3">Recevoir les notifications</h1>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" th:field="*{days}" name="radio" id="radio1" value="flux-continu" checked>
+                            <label class="form-check-label" for="radio1">
+
+                                En flux continu (défaut)
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" th:field="*{days}" name="radio" id="radio2" value="perday">
+                            <label class="form-check-label" for="radio2">
+                                Agrégées, une fois par jour
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" th:field="*{days}" name="radio" id="radio3" value="perweek">
+                            <label class="form-check-label" for="radio3">
+                                Agrégées, une fois par semaine (le jeudi)
+                            </label>
+                        </div>
+
+                        <h1 class="pt-5 pb-2">Notification pour les contacts Lab&Co</h1>
+                        <p>Choisissez le nombre de jours (maximum 30) au-delà duquel vous serez notifié
+                            lorsqu'une demande dont vous êtes le contact n'a donné lieu à aucune activité.
+                        </p>
+                        <input type="range"   class="form-range mb-3" th:field="*{numday}" min="0" max="30" value="0" step="1">
+
+
+                        <button type="submit" class="btn btn-primary">Valider</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col px-1">
+            FOOTER
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script  src xmlns:th="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+</body>
