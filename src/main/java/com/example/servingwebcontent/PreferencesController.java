@@ -31,7 +31,7 @@ public class PreferencesController {
 
         // TODO: save project in DB here
 
-        return "reesult";
+        return "result";
     }
 
 

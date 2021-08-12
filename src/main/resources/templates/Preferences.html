@@ -32,7 +32,7 @@
                 </div>
                 <hr class="m-0"/>
                 <div class="row p-3">
-                    <form th:action="@{/save-project}" th:object="${jour}" method="post" class="col-12">
+                    <form th:action="@{/save-time}" th:object="${jour}" method="post" class="col-12">
                         <ul th:if="${#fields.hasErrors('*')}">
                             <li th:each="error : ${#fields.errors('*')}" th:text="${error}">error</li>
                         </ul>
