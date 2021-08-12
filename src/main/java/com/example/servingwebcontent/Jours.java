@@ -15,6 +15,10 @@ public class Jours implements Serializable {
     private Long id;
 
     private String days;
+    private Integer numday;
+
+
+
 
     public Jours(Integer numday) {
         this.numday = numday;
@@ -28,7 +32,7 @@ public class Jours implements Serializable {
         this.numday = numday;
     }
 
-    private Integer numday;
+
 
 
 
